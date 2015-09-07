@@ -104,7 +104,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "Return";
-            this.Text = "Form1";
+			this.Text = "Return Book";
             this.ResumeLayout(false);
             this.PerformLayout();
 

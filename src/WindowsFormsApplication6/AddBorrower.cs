@@ -23,7 +23,7 @@ namespace WindowsFormsApplication6
 			try {
 				string myConnection = "datasource=localhost;port=3306;username=root;password=";
 				string query = "insert into library.borrower_details(name, card_no, contact_no, fine) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','0');";
-				string query_login = "insert into library.login_credential (username,id) values ('" + textBox1.Text + "','" + textBox2.Text + "');";
+				string query_login = "insert into library.login_credential (username,password,id) values ('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox2.Text + "');";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);

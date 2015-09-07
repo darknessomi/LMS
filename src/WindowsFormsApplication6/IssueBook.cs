@@ -47,13 +47,10 @@ namespace WindowsFormsApplication6
 					string sname = myReader.GetString ("book_id");
 					string scopies = myReader.GetString ("no_of_copies");
 					int i = int.Parse (scopies);
-					if (i > 0)
+					if (i > 1)
 						comboBox1.Items.Add (sname);
 
 				}
-
-
-
 
 				myConn.Close ();
 
@@ -168,15 +165,11 @@ namespace WindowsFormsApplication6
 
 				myConn.Open ();
 				myReader = cmdDataBase.ExecuteReader ();
-
-                
                 
 				MessageBox.Show ("Issued");
 
 				while (myReader.Read ()) {
 				}
-
-
 
 				myConn.Close ();
 

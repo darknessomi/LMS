@@ -54,22 +54,29 @@ namespace WindowsFormsApplication6
 			try {
 				string myConnection = "datasource=localhost;port=3306;username=root;password=";
 				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
+				string query_login = "update library.login_credential set username='" + textBox1.Text + "' , password='" + textBox3.Text + "' where id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
+				MySqlCommand cmdDataBase_login = new MySqlCommand (query_login, myConn);
 				MySqlDataReader myReader;
+				MySqlDataReader myReader_login;
 
 				myConn.Open ();
 
 				myReader = cmdDataBase.ExecuteReader ();
-				MessageBox.Show ("Updated");
+
 				while (myReader.Read ()) {
 
 				}
 
+				myConn.Close ();
+				myConn.Open ();
+				myReader_login = cmdDataBase_login.ExecuteReader ();
+				while (myReader_login.Read ()) {
 
-
-
+				}
+				MessageBox.Show ("Updated");
 				myConn.Close ();
 
 			} catch (Exception ex) {
