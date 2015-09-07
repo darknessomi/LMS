@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>Y:\Downloads\mysql-connector-net-6.8.6-noinstall\v4.5\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +42,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="MySql.Data">
+      <HintPath>MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddBook.cs">
@@ -211,28 +211,28 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\books-blurred-background.jpg" />
+    <None Include="Resources\2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\books bookshelf 2987x1986 wallpaper_www.wallpaperno.com_98.jpg" />
+    <Content Include="Resources\5.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stock-footage-pan-right-of-stack-of-book-in-library-candlelight-and-bookshelf.jpg" />
+    <None Include="Resources\9.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images.jpg" />
+    <None Include="Resources\3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house_on_the_rock_library-t2.jpg" />
+    <None Include="Resources\6.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\indoors room library brown books interior chairs bookshelf rugs 1440x900 wallpaper_www.wallpaperfo.com_75.jpg" />
+    <None Include="Resources\8.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3fe27d235902be5dc24539842e4ee140_large.jpeg" />
+    <Content Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\4.jpg" />

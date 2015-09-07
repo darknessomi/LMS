@@ -37,25 +37,25 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(178, 78);
+            this.comboBox1.Location = new System.Drawing.Point(86, 181);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(210, 20);
             this.comboBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 85);
+            this.label1.Location = new System.Drawing.Point(84, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(95, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select card no.";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 201);
+            this.button1.Location = new System.Drawing.Point(337, 180);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 21);
             this.button1.TabIndex = 2;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,9 +63,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 22);
+            this.button2.Location = new System.Drawing.Point(13, 20);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 21);
             this.button2.TabIndex = 3;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // 
             // DeleteBorrower
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication6.Properties.Resources.indoors_room_library_brown_books_interior_chairs_bookshelf_rugs_1440x900_wallpaper_www_wallpaperfo_com_75;
-            this.ClientSize = new System.Drawing.Size(376, 324);
+            this.ClientSize = new System.Drawing.Size(492, 391);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

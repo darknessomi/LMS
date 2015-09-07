@@ -36,16 +36,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(352, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 432);
             this.dataGridView1.TabIndex = 0;
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(13, 13);
+            this.Back.Location = new System.Drawing.Point(13, 12);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.Size = new System.Drawing.Size(75, 21);
             this.Back.TabIndex = 1;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -53,10 +53,10 @@
             // 
             // ViewIssued
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication6.Properties.Resources.books_blurred_background;
-            this.ClientSize = new System.Drawing.Size(376, 324);
+            this.ClientSize = new System.Drawing.Size(624, 498);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewIssued";

@@ -38,10 +38,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.BurlyWood;
-            this.button1.Font = new System.Drawing.Font("Segoe WP Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(126, 56);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(198, 66);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 41);
+            this.button1.Size = new System.Drawing.Size(133, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Borrower";
             this.button1.UseVisualStyleBackColor = false;
@@ -50,10 +50,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.BurlyWood;
-            this.button2.Font = new System.Drawing.Font("Segoe WP Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(126, 103);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(198, 128);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 41);
+            this.button2.Size = new System.Drawing.Size(133, 38);
             this.button2.TabIndex = 1;
             this.button2.Text = "Update borrower";
             this.button2.UseVisualStyleBackColor = false;
@@ -62,10 +62,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.BurlyWood;
-            this.button3.Font = new System.Drawing.Font("Segoe WP Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(126, 150);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(198, 199);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 41);
+            this.button3.Size = new System.Drawing.Size(133, 38);
             this.button3.TabIndex = 2;
             this.button3.Text = "Delete borrower";
             this.button3.UseVisualStyleBackColor = false;
@@ -74,10 +74,10 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.BurlyWood;
-            this.button4.Font = new System.Drawing.Font("Segoe WP Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(126, 209);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(198, 268);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 41);
+            this.button4.Size = new System.Drawing.Size(133, 38);
             this.button4.TabIndex = 3;
             this.button4.Text = "View Borrower Info";
             this.button4.UseVisualStyleBackColor = false;
@@ -85,9 +85,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(13, 13);
+            this.button5.Location = new System.Drawing.Point(13, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(75, 21);
             this.button5.TabIndex = 4;
             this.button5.Text = "Back";
             this.button5.UseVisualStyleBackColor = true;
@@ -95,11 +95,11 @@
             // 
             // ManageBorrower
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication6.Properties.Resources.indoors_room_library_brown_books_interior_chairs_bookshelf_rugs_1440x900_wallpaper_www_wallpaperfo_com_75;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(376, 324);
+            this.ClientSize = new System.Drawing.Size(507, 397);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
