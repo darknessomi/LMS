@@ -16,7 +16,7 @@ namespace WindowsFormsApplication6
 	{
 		//int d, m, y;
 		int n = 0;
-
+		string myConnection = DB.GetDB();
 		public IssueBook ()
 		{
 			InitializeComponent ();
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication6
 		void fillCombo1 ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.book_database ";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication6
 					string sname = myReader.GetString ("book_id");
 					string scopies = myReader.GetString ("no_of_copies");
 					int i = int.Parse (scopies);
-					if (i > 1)
+					if (i > 0)
 						comboBox1.Items.Add (sname);
 
 				}
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication6
 		void fillCombo2 ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.borrower_details ";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication6
 			//y = int.Parse(y2);
             
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "insert into library.borrowed_books(book_id, card_no, issue_date, due_date) values ('" + (string)comboBox1.SelectedItem + "','" + (string)comboBox2.SelectedItem + "','" + y1 + "-" + m1 + "-" + d1 + "','" + y2 + "-" + m2 + "-" + d2 + "');";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -126,7 +126,7 @@ namespace WindowsFormsApplication6
 		void change ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select no_of_copies from library.book_database where book_id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				//// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -156,7 +156,7 @@ namespace WindowsFormsApplication6
 		{
 			try {
 
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "update library.book_database set no_of_copies=" + n.ToString () + " where book_id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);

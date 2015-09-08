@@ -13,6 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class UpdateBook : Form
 	{
+		string myConnection = DB.GetDB();
 		public UpdateBook ()
 		{
 			InitializeComponent ();
@@ -24,7 +25,7 @@ namespace WindowsFormsApplication6
 		void fillCombo ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.book_database ";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -55,7 +56,7 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "update library.book_database set title='" + textBox1.Text + "', genre='" + textBox2.Text + "', author='" + textBox3.Text + "',no_of_copies='" + textBox4.Text + "' where book_id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
                 

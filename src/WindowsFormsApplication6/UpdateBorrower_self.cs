@@ -11,10 +11,20 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication6
 {
-	public partial class DeleteBorrower : Form
+	public partial class UpdateBorrower_self: Form
 	{
-		string myConnection = DB.GetDB();
-		public DeleteBorrower ()
+		public string id { get; set; }
+
+		string myConnection = DB.GetDB ();
+
+		public UpdateBorrower_self (string id)
+		{
+			this.id = id;
+			InitializeComponent ();
+			fillCombo ();
+		}
+
+		public UpdateBorrower_self ()
 		{
 			InitializeComponent ();
 			fillCombo ();
@@ -22,40 +32,14 @@ namespace WindowsFormsApplication6
 
 		void fillCombo ()
 		{
-			try {
-				
-				string query = "select * from library.borrower_details ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
-				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
-				MySqlDataReader myReader;
-
-				myConn.Open ();
-
-				myReader = cmdDataBase.ExecuteReader ();
-
-				while (myReader.Read ()) {
-					string sname = myReader.GetString ("card_no");
-					comboBox1.Items.Add (sname);
-
-				}
-
-
-
-
-				myConn.Close ();
-
-			} catch (Exception ex) {
-				MessageBox.Show (ex.Message);
-			}
+			comboBox1.Items.Add (id);
 		}
 
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				
-				string query = "delete from library.borrower_details where card_no='" + (string)comboBox1.SelectedItem + "';";
-				string query_login = "delete from library.login_credential where id='" + (string)comboBox1.SelectedItem + "';";
+				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
+				string query_login = "update library.login_credential set username='" + textBox1.Text + "' , password='" + textBox3.Text + "' where id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -70,14 +54,14 @@ namespace WindowsFormsApplication6
 				while (myReader.Read ()) {
 
 				}
-					
+
 				myConn.Close ();
 				myConn.Open ();
 				myReader_login = cmdDataBase_login.ExecuteReader ();
 				while (myReader_login.Read ()) {
 
 				}
-				MessageBox.Show ("Deleted");
+				MessageBox.Show ("Updated");
 				myConn.Close ();
 
 			} catch (Exception ex) {
@@ -87,7 +71,7 @@ namespace WindowsFormsApplication6
 
 		private void button2_Click (object sender, EventArgs e)
 		{
-			ManageBorrower f = new ManageBorrower ();
+			BorrowerMenu f = new BorrowerMenu ();
 			f.Visible = true;
 			this.Close ();
 		}

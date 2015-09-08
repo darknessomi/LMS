@@ -13,6 +13,8 @@ namespace WindowsFormsApplication6
 {
 	public partial class UpdateBorrower : Form
 	{
+		string myConnection = DB.GetDB ();
+
 		public UpdateBorrower ()
 		{
 			InitializeComponent ();
@@ -22,7 +24,7 @@ namespace WindowsFormsApplication6
 		void fillCombo ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.borrower_details ";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -34,14 +36,11 @@ namespace WindowsFormsApplication6
 				myReader = cmdDataBase.ExecuteReader ();
 
 				while (myReader.Read ()) {
-					string sname = myReader.GetString ("card_no");
-					comboBox1.Items.Add (sname);
+
+
 
 				}
-
-
-
-
+					
 				myConn.Close ();
 
 			} catch (Exception ex) {
@@ -52,8 +51,8 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
-				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
+				
+				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "', fine='" + textBox4.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
 				string query_login = "update library.login_credential set username='" + textBox1.Text + "' , password='" + textBox3.Text + "' where id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 

@@ -13,15 +13,23 @@ namespace WindowsFormsApplication6
 {
 	public partial class ViewBookDetails : Form
 	{
+		public string id { get; set; }
+		string myConnection = DB.GetDB();
 		public ViewBookDetails ()
 		{
+			this.id = "admin";
+			InitializeComponent ();
+		}
+		public ViewBookDetails (string id)
+		{
+			this.id = id;
 			InitializeComponent ();
 		}
 
 		private void ViewBookDetails_Load (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.book_database ;";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 
@@ -44,8 +52,13 @@ namespace WindowsFormsApplication6
 
 		private void button1_Click (object sender, EventArgs e)
 		{
-			ManageBookDetails f = new ManageBookDetails ();
-			f.Visible = true;
+			if (id == "admin") {
+				ManageBookDetails f = new ManageBookDetails ();
+				f.Visible = true;
+			} else {
+				ManageBookDetails_self f = new ManageBookDetails_self ();
+				f.Visible = true;
+			}
 			this.Close ();
 		}
 	}

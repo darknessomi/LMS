@@ -13,6 +13,8 @@ namespace WindowsFormsApplication6
 {
 	public partial class AddBook : Form
 	{
+		
+		string myConnection = DB.GetDB();
 		public AddBook ()
 		{
 			InitializeComponent ();
@@ -26,7 +28,7 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "insert into library.book_database(book_id, title, author, genre, no_of_copies) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "'," + textBox5.Text + ");";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();

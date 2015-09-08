@@ -13,6 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class ViewBorrower : Form
 	{
+		string myConnection = DB.GetDB();
 		public ViewBorrower ()
 		{
 			InitializeComponent ();
@@ -26,7 +27,7 @@ namespace WindowsFormsApplication6
 		private void ViewBorrower_Load (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.borrower_details ;";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 

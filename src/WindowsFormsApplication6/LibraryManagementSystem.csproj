@@ -203,6 +203,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="BorrowerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="BorrowerMenu.resx">
+      <DependentUpon>BorrowerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="BorrowerMenu.Designer.cs">
+      <DependentUpon>BorrowerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBorrower_self.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="UpdateBorrower_self.resx">
+      <DependentUpon>UpdateBorrower_self.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="UpdateBorrower.Designer_self.cs">
+      <DependentUpon>UpdateBorrower_self.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBookDetails_self.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ManageBookDetails_self.resx">
+      <DependentUpon>ManageBookDetails_self.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="ManageBookDetails.Designer_self.cs">
+      <DependentUpon>ManageBookDetails_self.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

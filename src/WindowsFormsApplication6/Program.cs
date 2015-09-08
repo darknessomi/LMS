@@ -19,4 +19,11 @@ namespace WindowsFormsApplication6
 			Application.Run (new Login ());
 		}
 	}
+	static class DB
+	{
+		public static string GetDB()
+		{
+			return "datasource=mirror.imomi.info;port=3306;username=root;password=group_0611";
+		}
+	}
 }

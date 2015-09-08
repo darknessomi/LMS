@@ -13,6 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class DeleteBook : Form
 	{
+		string myConnection = DB.GetDB();
 		public DeleteBook ()
 		{
 			InitializeComponent ();
@@ -22,7 +23,7 @@ namespace WindowsFormsApplication6
 		void fillCombo ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.book_database ";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -52,7 +53,7 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "delete from library.book_database where book_id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 

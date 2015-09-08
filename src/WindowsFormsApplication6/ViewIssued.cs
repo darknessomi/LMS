@@ -13,16 +13,31 @@ namespace WindowsFormsApplication6
 {
 	public partial class ViewIssued : Form
 	{
+		public string id { get; set; }
+
+		string myConnection = DB.GetDB ();
+
 		public ViewIssued ()
 		{
+			this.id = "admin";
+			InitializeComponent ();
+		}
+
+		public ViewIssued (string id)
+		{
+			this.id = id;
 			InitializeComponent ();
 		}
 
 		private void ViewIssued_Load (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
-				string query = "select * from library.borrowed_books;";
+				string query;
+				if (id == null) {
+					query = "select * from library.borrowed_books;";
+				} else {
+					query = "select * from library.borrowed_books where card_no='" + id + "';";
+				}
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -44,8 +59,14 @@ namespace WindowsFormsApplication6
 
 		private void Back_Click (object sender, EventArgs e)
 		{
-			ManageBookDetails f = new ManageBookDetails ();
-			f.Visible = true;
+			if (id == "admin") {
+				ManageBookDetails f = new ManageBookDetails ();
+				f.Visible = true;
+			} else {
+				ManageBookDetails_self f = new ManageBookDetails_self ();
+				f.Visible = true;
+			}
+
 			this.Close ();
 		}
 	}

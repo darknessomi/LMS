@@ -13,6 +13,8 @@ namespace WindowsFormsApplication6
 {
 	public partial class Login : Form
 	{
+		string myConnection = DB.GetDB ();
+
 		public Login ()
 		{
 			InitializeComponent ();
@@ -21,7 +23,7 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand SelectCommand = new MySqlCommand ("select * from library.login_credential where username='" + textBox1.Text + "' and password='" + textBox2.Text + "';", myConn);
@@ -36,9 +38,15 @@ namespace WindowsFormsApplication6
 				}
 
 				if (count == 1) {
-					MainMenu f1 = new MainMenu ();
-					f1.Visible = true;
-					this.Hide ();
+					if (int.Parse (myReader.GetString ("id")) < 500) {
+						MainMenu f1 = new MainMenu ();
+						f1.Visible = true;
+						this.Hide ();
+					} else {
+						BorrowerMenu f1 = new BorrowerMenu (myReader.GetString ("id"));
+						f1.Visible = true;
+						this.Hide ();
+					}
 				} else {
 					MessageBox.Show ("Incorrect username/password");
 				}
@@ -48,12 +56,6 @@ namespace WindowsFormsApplication6
 			} catch (Exception ex) {
 				MessageBox.Show (ex.Message);
 			}
-			//if (textBox2.Text.Equals("dbms"))
-			//{
-			//    MainMenu f1 = new MainMenu();
-			//    f1.Visible = true;
-			//    this.Close();
-			//}
 		}
 	}
 }

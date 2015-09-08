@@ -18,9 +18,20 @@ namespace WindowsFormsApplication6
 		int month;
 		int day;
 		int fine;
-
+		public string id { get; set; }
+		string myConnection = DB.GetDB();
 		public Return ()
 		{
+			this.id = "admin";
+			InitializeComponent ();
+			fillCombo1 ();
+			fillCombo2 ();
+
+		}
+
+		public Return (string id)
+		{
+			this.id = id;
 			InitializeComponent ();
 			fillCombo1 ();
 			fillCombo2 ();
@@ -30,8 +41,13 @@ namespace WindowsFormsApplication6
 		void fillCombo1 ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
-				string query = "select * from library.borrowed_books ";
+				
+				string query;
+				if (id == null) {
+					query = "select * from library.borrowed_books;";
+				} else {
+					query = "select * from library.borrowed_books where card_no='" + id + "';";
+				}
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -50,9 +66,6 @@ namespace WindowsFormsApplication6
 
 				}
 
-
-
-
 				myConn.Close ();
 
 			} catch (Exception ex) {
@@ -63,8 +76,12 @@ namespace WindowsFormsApplication6
 		void fillCombo2 ()
 		{
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
-				string query = "select * from library.borrowed_books ";
+				string query;
+				if (id == null) {
+					query = "select * from library.borrowed_books;";
+				} else {
+					query = "select * from library.borrowed_books where card_no='" + id + "';";
+				}
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -75,13 +92,9 @@ namespace WindowsFormsApplication6
 				myReader = cmdDataBase.ExecuteReader ();
 
 				while (myReader.Read ()) {
-					string sname = myReader.GetString ("card_no");
-					comboBox2.Items.Add (sname);
+					comboBox2.Items.Add (myReader.GetString ("card_no"));
 
 				}
-
-
-
 
 				myConn.Close ();
 
@@ -94,7 +107,7 @@ namespace WindowsFormsApplication6
 		{
 
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 //				MessageBox.Show("select * from library.borrowed_books where book_id=" + (string)comboBox1.SelectedItem + " and card_no=" + (string)comboBox2.SelectedItem + ";");
 				string query = "select * from library.borrowed_books where book_id=" + (string)comboBox1.SelectedItem + " and card_no=" + (string)comboBox2.SelectedItem + ";";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
@@ -144,7 +157,7 @@ namespace WindowsFormsApplication6
 		{
 
 			try {
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "select * from library.borrower_details where card_no='" + (string)comboBox2.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				//// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -180,7 +193,7 @@ namespace WindowsFormsApplication6
 			retfine ();
 			try {
 
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "update library.borrower_details set fine=" + fine.ToString () + " where card_no='" + (string)comboBox2.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -212,7 +225,7 @@ namespace WindowsFormsApplication6
 
 			try {
 
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
+				
 				string query = "update library.book_database set no_of_copies=no_of_copies+1 where book_id='" + (string)comboBox1.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
@@ -235,14 +248,10 @@ namespace WindowsFormsApplication6
 		private void button1_Click (object sender, EventArgs e)
 		{
 
-
-
 			try {
 				retdate ();
 				finecal ();
 				add_copies ();
-				string myConnection = "datasource=localhost;port=3306;username=root;password=";
-
 				string query = "delete from library.borrowed_books where book_id='" + (string)comboBox1.SelectedItem + "' and card_no='" + (string)comboBox2.SelectedItem + "';";
 				MySqlConnection myConn = new MySqlConnection (myConnection);
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
@@ -263,8 +272,13 @@ namespace WindowsFormsApplication6
 
 		private void button2_Click (object sender, EventArgs e)
 		{
-			ManageBookDetails f = new ManageBookDetails ();
-			f.Visible = true;
+			if (id == "admin") {
+				ManageBookDetails f = new ManageBookDetails ();
+				f.Visible = true;
+			} else {
+				ManageBookDetails_self f = new ManageBookDetails_self ();
+				f.Visible = true;
+			}
 			this.Close ();
 		}
 	}
