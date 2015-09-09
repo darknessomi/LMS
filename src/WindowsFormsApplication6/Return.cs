@@ -19,7 +19,7 @@ namespace WindowsFormsApplication6
 		int day;
 		int fine;
 		public string id { get; set; }
-		string myConnection = DB.GetDB();
+		
 		public Return ()
 		{
 			this.id = "admin";
@@ -48,7 +48,7 @@ namespace WindowsFormsApplication6
 				} else {
 					query = "select * from library.borrowed_books where card_no='" + id + "';";
 				}
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -82,7 +82,7 @@ namespace WindowsFormsApplication6
 				} else {
 					query = "select * from library.borrowed_books where card_no='" + id + "';";
 				}
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -110,7 +110,7 @@ namespace WindowsFormsApplication6
 				
 //				MessageBox.Show("select * from library.borrowed_books where book_id=" + (string)comboBox1.SelectedItem + " and card_no=" + (string)comboBox2.SelectedItem + ";");
 				string query = "select * from library.borrowed_books where book_id=" + (string)comboBox1.SelectedItem + " and card_no=" + (string)comboBox2.SelectedItem + ";";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				//// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -159,7 +159,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.borrower_details where card_no='" + (string)comboBox2.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				//// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -195,7 +195,7 @@ namespace WindowsFormsApplication6
 
 				
 				string query = "update library.borrower_details set fine=" + fine.ToString () + " where card_no='" + (string)comboBox2.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
 
@@ -227,7 +227,7 @@ namespace WindowsFormsApplication6
 
 				
 				string query = "update library.book_database set no_of_copies=no_of_copies+1 where book_id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
 
@@ -253,7 +253,7 @@ namespace WindowsFormsApplication6
 				finecal ();
 				add_copies ();
 				string query = "delete from library.borrowed_books where book_id='" + (string)comboBox1.SelectedItem + "' and card_no='" + (string)comboBox2.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;

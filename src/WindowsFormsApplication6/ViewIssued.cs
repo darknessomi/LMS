@@ -15,7 +15,6 @@ namespace WindowsFormsApplication6
 	{
 		public string id { get; set; }
 
-		string myConnection = DB.GetDB ();
 
 		public ViewIssued ()
 		{
@@ -38,7 +37,7 @@ namespace WindowsFormsApplication6
 				} else {
 					query = "select * from library.borrowed_books where card_no='" + id + "';";
 				}
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				// MySqlDataReader myReader;

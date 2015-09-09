@@ -14,7 +14,7 @@ namespace WindowsFormsApplication6
 	public partial class ViewBookDetails : Form
 	{
 		public string id { get; set; }
-		string myConnection = DB.GetDB();
+		
 		public ViewBookDetails ()
 		{
 			this.id = "admin";
@@ -31,7 +31,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.book_database ;";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				// MySqlDataReader myReader;

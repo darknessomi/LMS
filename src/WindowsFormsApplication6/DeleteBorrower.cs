@@ -13,7 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class DeleteBorrower : Form
 	{
-		string myConnection = DB.GetDB();
+		
 		public DeleteBorrower ()
 		{
 			InitializeComponent ();
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.borrower_details ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication6
 				
 				string query = "delete from library.borrower_details where card_no='" + (string)comboBox1.SelectedItem + "';";
 				string query_login = "delete from library.login_credential where id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlCommand cmdDataBase_login = new MySqlCommand (query_login, myConn);

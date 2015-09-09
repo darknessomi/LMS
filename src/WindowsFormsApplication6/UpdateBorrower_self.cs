@@ -15,7 +15,6 @@ namespace WindowsFormsApplication6
 	{
 		public string id { get; set; }
 
-		string myConnection = DB.GetDB ();
 
 		public UpdateBorrower_self (string id)
 		{
@@ -40,7 +39,7 @@ namespace WindowsFormsApplication6
 			try {
 				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
 				string query_login = "update library.login_credential set username='" + textBox1.Text + "' , password='" + textBox3.Text + "' where id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlCommand cmdDataBase_login = new MySqlCommand (query_login, myConn);

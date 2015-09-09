@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication6
 {
@@ -21,9 +22,10 @@ namespace WindowsFormsApplication6
 	}
 	static class DB
 	{
-		public static string GetDB()
+		public static MySqlConnection GetDB()
 		{
-			return "datasource=mirror.imomi.info;port=3306;username=root;password=group_0611";
+			MySqlConnection myConn = new MySqlConnection ("datasource=mirror.imomi.info;port=3306;username=root;password=group_0611");
+			return myConn;
 		}
 	}
 }

@@ -16,7 +16,7 @@ namespace WindowsFormsApplication6
 	{
 		//int d, m, y;
 		int n = 0;
-		string myConnection = DB.GetDB();
+		
 		public IssueBook ()
 		{
 			InitializeComponent ();
@@ -34,7 +34,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.book_database ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -65,7 +65,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.borrower_details ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -105,7 +105,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "insert into library.borrowed_books(book_id, card_no, issue_date, due_date) values ('" + (string)comboBox1.SelectedItem + "','" + (string)comboBox2.SelectedItem + "','" + y1 + "-" + m1 + "-" + d1 + "','" + y2 + "-" + m2 + "-" + d2 + "');";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select no_of_copies from library.book_database where book_id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				//// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -158,7 +158,7 @@ namespace WindowsFormsApplication6
 
 				
 				string query = "update library.book_database set no_of_copies=" + n.ToString () + " where book_id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
 

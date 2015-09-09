@@ -13,7 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class DeleteBook : Form
 	{
-		string myConnection = DB.GetDB();
+		
 		public DeleteBook ()
 		{
 			InitializeComponent ();
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.book_database ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "delete from library.book_database where book_id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;

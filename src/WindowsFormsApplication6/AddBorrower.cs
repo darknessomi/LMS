@@ -13,7 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class AddBorrower : Form
 	{
-		string myConnection = DB.GetDB();
+		
 		public AddBorrower ()
 		{
 			InitializeComponent ();
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication6
 				
 				string query = "insert into library.borrower_details(name, card_no, contact_no, fine) values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','0');";
 				string query_login = "insert into library.login_credential (username,password,id) values ('" + textBox1.Text + "','" + textBox3.Text + "','" + textBox2.Text + "');";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlCommand cmdDataBase_login = new MySqlCommand (query_login, myConn);

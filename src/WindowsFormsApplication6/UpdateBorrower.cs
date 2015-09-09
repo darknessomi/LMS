@@ -13,7 +13,6 @@ namespace WindowsFormsApplication6
 {
 	public partial class UpdateBorrower : Form
 	{
-		string myConnection = DB.GetDB ();
 
 		public UpdateBorrower ()
 		{
@@ -26,7 +25,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.borrower_details ";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlDataReader myReader;
@@ -54,7 +53,7 @@ namespace WindowsFormsApplication6
 				
 				string query = "update library.borrower_details set name='" + textBox1.Text + "', contact_no='" + textBox2.Text + "', fine='" + textBox4.Text + "' where card_no='" + (string)comboBox1.SelectedItem + "';";
 				string query_login = "update library.login_credential set username='" + textBox1.Text + "' , password='" + textBox3.Text + "' where id='" + (string)comboBox1.SelectedItem + "';";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				MySqlCommand cmdDataBase_login = new MySqlCommand (query_login, myConn);

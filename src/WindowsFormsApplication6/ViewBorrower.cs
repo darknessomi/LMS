@@ -13,7 +13,7 @@ namespace WindowsFormsApplication6
 {
 	public partial class ViewBorrower : Form
 	{
-		string myConnection = DB.GetDB();
+		
 		public ViewBorrower ()
 		{
 			InitializeComponent ();
@@ -29,7 +29,7 @@ namespace WindowsFormsApplication6
 			try {
 				
 				string query = "select * from library.borrower_details ;";
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 
 				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
 				// MySqlDataReader myReader;

@@ -13,7 +13,6 @@ namespace WindowsFormsApplication6
 {
 	public partial class Login : Form
 	{
-		string myConnection = DB.GetDB ();
 
 		public Login ()
 		{
@@ -24,7 +23,7 @@ namespace WindowsFormsApplication6
 		{
 			try {
 				
-				MySqlConnection myConn = new MySqlConnection (myConnection);
+				MySqlConnection myConn = DB.GetDB();
 				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
 				MySqlCommand SelectCommand = new MySqlCommand ("select * from library.login_credential where username='" + textBox1.Text + "' and password='" + textBox2.Text + "';", myConn);
 				MySqlDataReader myReader;
