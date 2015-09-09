@@ -52,5 +52,17 @@ namespace WindowsFormsApplication6
 			f.Visible = true;
 			this.Close ();
 		}
-	}
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+			Xls f = new Xls ();
+			f.ExportBorrower ();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+			Xls f = new Xls ();
+			f.ImportBorrower ();
+        }
+    }
 }

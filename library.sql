@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.26)
 # Database: library
-# Generation Time: 2015-09-08 01:13:16 +0000
+# Generation Time: 2015-09-09 09:02:07 +0000
 # ************************************************************
 
 
@@ -34,15 +34,6 @@ CREATE TABLE `book_database` (
   PRIMARY KEY (`book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `book_database` WRITE;
-/*!40000 ALTER TABLE `book_database` DISABLE KEYS */;
-
-INSERT INTO `book_database` (`book_id`, `title`, `author`, `genre`, `no_of_copies`)
-VALUES
-	(1,'hehe','hskkdda','shadh',1);
-
-/*!40000 ALTER TABLE `book_database` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table borrowed_books
@@ -76,15 +67,6 @@ CREATE TABLE `borrower_details` (
   PRIMARY KEY (`card_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `borrower_details` WRITE;
-/*!40000 ALTER TABLE `borrower_details` DISABLE KEYS */;
-
-INSERT INTO `borrower_details` (`card_no`, `name`, `contact_no`, `fine`)
-VALUES
-	(501,'wiw','2323232',0);
-
-/*!40000 ALTER TABLE `borrower_details` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table login_credential
@@ -105,8 +87,7 @@ LOCK TABLES `login_credential` WRITE;
 
 INSERT INTO `login_credential` (`username`, `password`, `id`)
 VALUES
-	('admin','admin',NULL),
-	('wiw','123',501);
+	('admin','admin',1);
 
 /*!40000 ALTER TABLE `login_credential` ENABLE KEYS */;
 UNLOCK TABLES;
