@@ -45,6 +45,9 @@
     <Reference Include="MySql.Data">
       <HintPath>MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>ExcelLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddBook.cs">
@@ -220,6 +223,7 @@
     </EmbeddedResource>
     <Compile Include="UpdateBorrower.Designer_self.cs">
       <DependentUpon>UpdateBorrower_self.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageBookDetails_self.cs">
       <SubType>Form</SubType>
@@ -229,7 +233,9 @@
     </EmbeddedResource>
     <Compile Include="ManageBookDetails.Designer_self.cs">
       <DependentUpon>ManageBookDetails_self.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Xls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

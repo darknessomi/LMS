@@ -43,9 +43,6 @@ namespace WindowsFormsApplication6
                    
 				}
 
-                
-               
-
 				myConn.Close ();
 
 			} catch (Exception ex) {
