@@ -16,9 +16,18 @@ namespace WindowsFormsApplication6
 	{
 		//int d, m, y;
 		int n = 0;
-		
+
+		public string id { get; set; }
+
+
+		public IssueBook (string id)
+		{
+			this.id = id;
+			InitializeComponent ();
+		}
 		public IssueBook ()
 		{
+			this.id = "admin";
 			InitializeComponent ();
 		}
 
@@ -64,26 +73,30 @@ namespace WindowsFormsApplication6
 		{
 			try {
 				
-				string query = "select * from library.borrower_details ";
-				MySqlConnection myConn = DB.GetDB();
-				// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-				MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
-				MySqlDataReader myReader;
+				if (this.id == "admin") {
+					string query = "select * from library.borrower_details ";
+					MySqlConnection myConn = DB.GetDB();
+					// MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+					MySqlCommand cmdDataBase = new MySqlCommand (query, myConn);
+					MySqlDataReader myReader;
 
-				myConn.Open ();
+					myConn.Open ();
 
-				myReader = cmdDataBase.ExecuteReader ();
+					myReader = cmdDataBase.ExecuteReader ();
 
-				while (myReader.Read ()) {
-					string sname = myReader.GetString ("card_no");
-					comboBox2.Items.Add (sname);
+					while (myReader.Read ()) {
+						string sname = myReader.GetString ("card_no");
+						comboBox2.Items.Add (sname);
 
+					}
+
+
+
+
+					myConn.Close ();
+				}else{
+					comboBox2.Items.Add (this.id);
 				}
-
-
-
-
-				myConn.Close ();
 
 			} catch (Exception ex) {
 				MessageBox.Show (ex.Message);

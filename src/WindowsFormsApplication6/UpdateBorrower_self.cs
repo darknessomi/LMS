@@ -70,7 +70,7 @@ namespace WindowsFormsApplication6
 
 		private void button2_Click (object sender, EventArgs e)
 		{
-			BorrowerMenu f = new BorrowerMenu ();
+			BorrowerMenu f = new BorrowerMenu (id);
 			f.Visible = true;
 			this.Close ();
 		}

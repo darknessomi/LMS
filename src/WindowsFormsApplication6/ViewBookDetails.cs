@@ -56,7 +56,7 @@ namespace WindowsFormsApplication6
 				ManageBookDetails f = new ManageBookDetails ();
 				f.Visible = true;
 			} else {
-				ManageBookDetails_self f = new ManageBookDetails_self ();
+				ManageBookDetails_self f = new ManageBookDetails_self (id);
 				f.Visible = true;
 			}
 			this.Close ();

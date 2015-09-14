@@ -24,7 +24,7 @@ namespace WindowsFormsApplication6
 	{
 		public static MySqlConnection GetDB()
 		{
-			MySqlConnection myConn = new MySqlConnection ("datasource=mirror.imomi.info;port=3306;username=root;password=group_0611");
+			MySqlConnection myConn = new MySqlConnection ("datasource=qingdao.imomi.info;port=3306;username=root;password=005623");
 			return myConn;
 		}
 	}

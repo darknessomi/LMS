@@ -26,7 +26,7 @@ namespace WindowsFormsApplication6
 
 		private void button3_Click (object sender, EventArgs e)
 		{
-			IssueBook f = new IssueBook ();
+			IssueBook f = new IssueBook (id);
 			f.Visible = true;
 			this.Close ();
 		}
